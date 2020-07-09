@@ -3,4 +3,9 @@ Rails.application.routes.draw do
     root to: "tasks#index"
     
     resources :tasks
+    
+    get "signup", to: "users#new"
+    # get "users", to: "users#index"
+    # post "users/:id/create", to: "users#create"
+    resources :users, only: [:create, :index]
 end
